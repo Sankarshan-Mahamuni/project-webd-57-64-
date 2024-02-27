@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detective Quiz Game</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .options {
+    list-style-type: none;
+    padding: 0;
+  }
+  .options li {
+    margin-bottom: 10px;
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Detective Quiz</h1>
+  <div class="question">
+    <h2>Question 1:</h2>
+    <p>The body of Mr. Johnson, a renowned art collector, was discovered in his mansion's library. The room was locked from the inside, and there were no signs of forced entry. Investigating officers found three items near the body: a torn painting, a half-empty glass of wine, and a peculiar footprint on the carpet. Additionally, there was a distinct smell of almonds in the air.
+
+        Who might be the prime suspect, and what could be the motive?</p>
+        <p> Clues:
+
+            The torn painting suggests a struggle or altercation occurred in the room.<br>
+            The half-empty glass of wine hints at a possible social gathering or rendezvous.<br>
+            The peculiar footprint on the carpet might indicate the presence of an intruder.<br>
+            The distinct smell of almonds raises suspicions of cyanide poisoning.<br></p>
+  </div>
+  <ul class="options">
+    <li><input type="radio" name="q1" value="a">A) Mrs. Johnson - Motive: Inheritance</li>
+    <li><input type="radio" name="q1" value="b"> B) Mr. Johnson's business partner - Motive: Financial dispute </li>
+    <li><input type="radio" name="q1" value="c">C) The butler - Motive: Personal vendetta</li>
+    <li><input type="radio" name="q1" value="d"> D) A random burglar - Motive: Theft</li>
+  </ul>
+  <button onclick="checkAnswer()">Submit Answer</button>
+  <p id="result"></p>
+</div>
+
+<script>
+  function checkAnswer() {
+    var answer = document.querySelector('input[name="q1"]:checked');
+    if (answer) {
+      if (answer.value === "a") {
+        document.getElementById("result").innerHTML = "Correct! +1.";
+      } else {
+        document.getElementById("result").innerHTML = "Incorrect. Please try again.";
+      }
+    } else {
+      document.getElementById("result").innerHTML = "Please select an answer.";
+    }
+  }
+</script>
+
+</body>
+</html>
